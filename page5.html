@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lots of Love, Didi ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+
+        <div class="final-heart">💝</div>
+
+        <h1>Once Again, Happy Birthday!</h1>
+
+        <p class="fade-text">
+            I hope your day is as wonderful and special
+            as you are, Didi.
+        </p>
+
+        <h2>
+            Stay Happy. Stay Blessed. Keep Smiling! 🥰
+        </h2>
+
+        <p>
+            Lots of love, today and always. ❤️
+        </p>
+
+        <p class="small">
+            Made with love, especially for you.
+        </p>
+
+        <a href="index.html" class="btn">
+            Replay Surprise ↻
+        </a>
+
+    </div>
+
+    <script>
+
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+
+            heart.textContent = ["❤️", "💗", "💕", "✨"]
+                [Math.floor(Math.random() * 4)];
+
+            heart.style.left = Math.random() * 100 + "vw";
+
+            heart.style.animationDuration =
+                (Math.random() * 3 + 3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 6500);
+        }
+
+        setInterval(createHeart, 500);
+
+    </script>
+
+</body>
+</html>

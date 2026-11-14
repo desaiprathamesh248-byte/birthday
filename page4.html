@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card" id="birthdayCard">
+
+        <div class="big-heart">🎊</div>
+
+        <h1>Ready for Your Surprise, Didi?</h1>
+
+        <p class="fade-text">
+            Make a wish, close your eyes for a moment,
+            and get ready for lots of birthday love!
+        </p>
+
+        <button class="btn" onclick="celebrate()">
+            Tap for Celebration! 🎉
+        </button>
+
+    </div>
+
+    <script>
+
+        function celebrate() {
+
+            const card = document.getElementById("birthdayCard");
+
+            card.innerHTML = `
+                <div class="big-heart">🎂</div>
+
+                <h1 class="fade-text">
+                    Yay! It's Your Day! ❤️
+                </h1>
+
+                <p class="fade-text">
+                    May this new year of your life bring
+                    new adventures, good health, success
+                    and endless happiness.
+                </p>
+
+                <p class="fade-text">
+                    Keep smiling, Didi.
+                    You make life brighter just by being you! 🥹💗
+                </p>
+
+                <a href="page5.html" class="btn">
+                    Your Final Birthday Wish → 💝
+                </a>
+            `;
+
+            for (let i = 0; i < 35; i++) {
+                setTimeout(createHeart, i * 100);
+            }
+        }
+
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+
+            const emojis = [
+                "❤️", "💗", "💕", "💖",
+                "✨", "🎉", "🥳"
+            ];
+
+            heart.textContent =
+                emojis[Math.floor(Math.random() * emojis.length)];
+
+            heart.style.left = Math.random() * 100 + "vw";
+
+            heart.style.animationDuration =
+                (Math.random() * 3 + 3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 6500);
+        }
+
+    </script>
+
+</body>
+</html>
